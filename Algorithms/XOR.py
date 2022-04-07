@@ -1,4 +1,4 @@
-def stringXOR(plainText, key, returnAsBinary=False):
+def stringXOR(plainText, key, returnAsBinary=False): # Main file.
     key = paddKey(plainText, key)
     plainTextBinary, keyBinary = convertToBinary(plainText), convertToBinary(key)
     result = ""
