@@ -1,4 +1,4 @@
-def stringXOR(plainText, key, returnAsBinary=False): # Main file.
+def stringXOR(plainText, key, returnAsBinary=False): # Main file to XOR a string and a key.
     key = paddKey(plainText, key)
     plainTextBinary, keyBinary = convertToBinary(plainText), convertToBinary(key)
     result = ""
@@ -51,7 +51,3 @@ def convertToString(inputBinaryString):
     for count, part in enumerate(parts):
         result += chr(int(part, 2))
     return result
-
-
-
-
