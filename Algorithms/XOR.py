@@ -1,4 +1,4 @@
-def stringXOR(plainText, key, returnAsBinary=False): # Main file to XOR a string and a key.
+def stringXOR(plainText, key, returnAsBinary=True): # Default return as binary string.
     key = paddKey(plainText, key)
     plainTextBinary, keyBinary = convertToBinary(plainText), convertToBinary(key)
     result = ""
@@ -15,6 +15,19 @@ def stringXOR(plainText, key, returnAsBinary=False): # Main file to XOR a string
     
     else:
         return convertToString(result)
+
+
+def inverseXOR(binaryString, key): 
+    key = paddKey(binaryString, convertToBinary(key))
+    result = ""
+    for i in range(0, len(binaryString)):
+        if binaryString[i] == '1' and key[i] == '1':
+            result += '0'
+        elif binaryString[i] == '0' and key[i] == '0':
+            result += '0'
+        else:
+            result += '1'
+    return convertToString(result)
     
 
 def paddKey(plainText, key):
@@ -51,3 +64,5 @@ def convertToString(inputBinaryString):
     for count, part in enumerate(parts):
         result += chr(int(part, 2))
     return result
+
+print(stringXOR("Hello", 'a'))
